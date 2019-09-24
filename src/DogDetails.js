@@ -1,17 +1,17 @@
 import React from 'react';
+import uuid from 'uuid/v4';
 
 class DogDetails extends React.Component {
   render() {
-    let allDogs = this.props.dogData;
-    let oneDog = allDogs.filter(d => d.name === this.props.match.params.name);
+    let dog = this.props.dogData;
     return (
       <div>
-        <h3>{oneDog[0].name}</h3>
-        <p>Age: {oneDog[0].age}</p>
+        <h3>{dog.name}</h3>
+        <p>Age: {dog.age}</p>
         <ul>
-          {oneDog[0].facts.map(fact => <li key={Math.random()}>{fact}</li>)}
+          {dog.facts.map(fact => <li key={uuid()}>{fact}</li>)}
         </ul>
-        <img src={oneDog[0].src} alt={oneDog[0].name} />
+        <img src={dog.src} alt={dog.name} />
       </div>
     )
   }
