@@ -12,11 +12,11 @@ class Routes extends React.Component {
         />
         <Route exact path="/dogs/:name"
           render={routeProps => {
-            let allDogs= this.props.dogs;
+            let allDogs = this.props.dogs;
             let oneDog = allDogs.filter(d => d.name === routeProps.match.params.name);
-            return <DogDetails {...routeProps} dogData={oneDog[0]} />}
-          }
-    />
+            return <DogDetails {...routeProps} dogData={oneDog[0]} />
+          }}
+        />
         <Redirect to="/dogs" />
       </Switch>
     )
